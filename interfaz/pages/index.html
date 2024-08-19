@@ -7,6 +7,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../styles/styleIndex.css">
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
@@ -47,79 +48,284 @@
         </div>
     </nav>
 
-    <section class="content">
+    <section class="banners">
         <div class="carrusel">
-
-            <button class="arrow" id="arrow-left"><span><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="rgba(0, 0, 0, 0.9)"><path d="M14.0656 4.9325L15.1263 5.99316L9.12254 11.9969L15.1325 18.0069L14.0719 19.0676L7.00122 11.9969L14.0656 4.9325Z" fill="rgba(0, 0, 0, 0.9)"></path></svg></span></button>
-            <button class="arrow" id="arrow-right"><span><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="rgba(0, 0, 0, 0.9)"><path d="M14.0656 4.9325L15.1263 5.99316L9.12254 11.9969L15.1325 18.0069L14.0719 19.0676L7.00122 11.9969L14.0656 4.9325Z" fill="rgba(0, 0, 0, 0.9)"></path></svg></span></button>
+            <button class="arrow-banner" id="arrow-banner-left"><span><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="rgba(0, 0, 0, 0.9)"><path d="M14.0656 4.9325L15.1263 5.99316L9.12254 11.9969L15.1325 18.0069L14.0719 19.0676L7.00122 11.9969L14.0656 4.9325Z" fill="rgba(0, 0, 0, 0.9)"></path></svg></span></button>
+            <section id="carrusel-inner">               
+                
+            </section>
+            <button class="arrow-banner" id="arrow-banner-right"><span><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="rgba(0, 0, 0, 0.9)"><path d="M14.0656 4.9325L15.1263 5.99316L9.12254 11.9969L15.1325 18.0069L14.0719 19.0676L7.00122 11.9969L14.0656 4.9325Z" fill="rgba(0, 0, 0, 0.9)"></path></svg></span></button>
+        
 
         </div>
     </section>
 
     <section class="product_Section">
 
-        <h1 class="pheading">Latest products</h1>
-
-        <div class="products" id="products">
-
-            <!-- Carta -->
-            <figure class="card">
-                <img src="../championes-nike.jpg" alt="Imagen de los Championes Nike">
-                <p class="desc">Deporte</p>
-                <h2 class="title">Championes Nike</h2>
-                <div class="box">
-                    <div class="price">$200</div>
-                    <button class="btn">Comprar</button>
-                </div>
-            </figure>
-            <!-- Carta -->
-            <!-- Carta -->
-            <figure class="card">
-                <img src="../championes-nike.jpg" alt="Imagen de los Championes Nike">
-                <p class="desc">Deporte</p>
-                <h2 class="title">Championes Nike</h2>
-                <div class="box">
-                    <div class="price">$200</div>
-                    <button class="btn">Comprar</button>
-                </div>
-            </figure>
-            <!-- Carta -->
-            <!-- Carta -->
-            <figure class="card">
-                <img src="../motosierra.png" alt="Imagen de Motosierra">
-                <p class="desc">Herramientas</p>
-                <h2 class="title">Motosierra</h2>
-                <div class="box">
-                    <div class="price">$150</div>
-                    <button class="btn">Comprar</button>
-                </div>
-            </figure>
-            <!-- Carta -->
-            <!-- Carta -->
-            <figure class="card">
-                <img src="../championes-nike.jpg" alt="Imagen de los Championes Nike">
-                <p class="desc">Deporte</p>
-                <h2 class="title">Championes Nike</h2>
-                <div class="box">
-                    <div class="price">$200</div>
-                    <button class="btn">Comprar</button>
-                </div>
-            </figure>
-            <!-- Carta -->
-            <!-- Carta -->
-            <figure class="card">
-                <img src="../Escritorio.jpg" alt="Imagen de Escritorios">
-                <p class="desc">Herramientas/Muebles</p>
-                <h2 class="title">Escritorio</h2>
-                <div class="box">
-                    <div class="price">$250</div>
-                    <button class="btn">Comprar</button>
-                </div>
-            </figure>
-            <!-- Carta -->
-        </div>
+        <h1 class="pheading">Ofertas de la semana</h1>
+        <section class="offers-product">
             
             
+                <div class="splide offers">
+                    <div class="splide__arrows">
+                        <button class="arrow-offers splide__arrow--prev"><span><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="rgba(0, 0, 0, 0.9)"><path d="M14.0656 4.9325L15.1263 5.99316L9.12254 11.9969L15.1325 18.0069L14.0719 19.0676L7.00122 11.9969L14.0656 4.9325Z" fill="rgba(0, 0, 0, 0.9)"></path></svg></span></button>                    </div>
+                    <div class="splide__track">
+                        <ul class="splide__list"> 
+                            <li class="splide__slide">
+                                <figure class="card">
+                                    <img src="../motosierra.png" alt="Imagen de Motosierra">
+                                    <p class="desc">Herramientas</p>
+                                    <h2 class="title">Motosierra</h2>
+                                    <div class="box">
+                                        <div class="price">$150</div>
+                                        <button class="btn">Comprar</button>
+                                    </div>
+                                </figure>                              
+                            </li>
+                            <li class="splide__slide">
+                                <figure class="card">
+                                    <img src="../motosierra.png" alt="Imagen de Motosierra">
+                                    <p class="desc">Herramientas</p>
+                                    <h2 class="title">Motosierra</h2>
+                                    <div class="box">
+                                        <div class="price">$150</div>
+                                        <button class="btn">Comprar</button>
+                                    </div>
+                                </figure>                              
+                            </li>
+                            <li class="splide__slide">
+                                <figure class="card">
+                                    <img src="../motosierra.png" alt="Imagen de Motosierra">
+                                    <p class="desc">Herramientas</p>
+                                    <h2 class="title">Motosierra</h2>
+                                    <div class="box">
+                                        <div class="price">$150</div>
+                                        <button class="btn">Comprar</button>
+                                    </div>
+                                </figure>                              
+                            </li>
+                            <li class="splide__slide">
+                                <figure class="card">
+                                    <img src="../motosierra.png" alt="Imagen de Motosierra">
+                                    <p class="desc">Herramientas</p>
+                                    <h2 class="title">Motosierra</h2>
+                                    <div class="box">
+                                        <div class="price">$150</div>
+                                        <button class="btn">Comprar</button>
+                                    </div>
+                                </figure>                              
+                            </li>
+                            <li class="splide__slide">
+                                <figure class="card">
+                                    <img src="../motosierra.png" alt="Imagen de Motosierra">
+                                    <p class="desc">Herramientas</p>
+                                    <h2 class="title">Motosierra</h2>
+                                    <div class="box">
+                                        <div class="price">$150</div>
+                                        <button class="btn">Comprar</button>
+                                    </div>
+                                </figure>                              
+                            </li>
+                            <li class="splide__slide">
+                                <figure class="card">
+                                    <img src="../motosierra.png" alt="Imagen de Motosierra">
+                                    <p class="desc">Herramientas</p>
+                                    <h2 class="title">Motosierra</h2>
+                                    <div class="box">
+                                        <div class="price">$150</div>
+                                        <button class="btn">Comprar</button>
+                                    </div>
+                                </figure>                              
+                            </li>
+                            <li class="splide__slide">
+                                <figure class="card">
+                                    <img src="../motosierra.png" alt="Imagen de Motosierra">
+                                    <p class="desc">Herramientas</p>
+                                    <h2 class="title">Motosierra</h2>
+                                    <div class="box">
+                                        <div class="price">$150</div>
+                                        <button class="btn">Comprar</button>
+                                    </div>
+                                </figure>                              
+                            </li>
+                            <li class="splide__slide">
+                                <figure class="card">
+                                    <img src="../motosierra.png" alt="Imagen de Motosierra">
+                                    <p class="desc">Herramientas</p>
+                                    <h2 class="title">Motosierra</h2>
+                                    <div class="box">
+                                        <div class="price">$150</div>
+                                        <button class="btn">Comprar</button>
+                                    </div>
+                                </figure>                              
+                            </li>
+                            <li class="splide__slide">
+                                <figure class="card">
+                                    <img src="../motosierra.png" alt="Imagen de Motosierra">
+                                    <p class="desc">Herramientas</p>
+                                    <h2 class="title">Motosierra</h2>
+                                    <div class="box">
+                                        <div class="price">$150</div>
+                                        <button class="btn">Comprar</button>
+                                    </div>
+                                </figure>                              
+                            </li>
+                            <li class="splide__slide">
+                                <figure class="card">
+                                    <img src="../motosierra.png" alt="Imagen de Motosierra">
+                                    <p class="desc">Herramientas</p>
+                                    <h2 class="title">Motosierra</h2>
+                                    <div class="box">
+                                        <div class="price">$150</div>
+                                        <button class="btn">Comprar</button>
+                                    </div>
+                                </figure>                              
+                            </li>
+
+
+
+
+
+                        </ul>
+                    </div>
+                    <div class="splide__arrows">
+                        <button class="arrow-offers splide__arrow--next"><span><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="rgba(0, 0, 0, 0.9)"><path d="M14.0656 4.9325L15.1263 5.99316L9.12254 11.9969L15.1325 18.0069L14.0719 19.0676L7.00122 11.9969L14.0656 4.9325Z" fill="rgba(0, 0, 0, 0.9)"></path></svg></span></button>
+                    </div>
+                </div>
+
+           
+        </section>
+        <h1 class="pheading">Mas Vendidos</h1>
+        <section class="best_sellers">
+            <div class="splide sellers">
+                <div class="splide__arrows">
+                    <button class="arrow-offers splide__arrow--prev"><span><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="rgba(0, 0, 0, 0.9)"><path d="M14.0656 4.9325L15.1263 5.99316L9.12254 11.9969L15.1325 18.0069L14.0719 19.0676L7.00122 11.9969L14.0656 4.9325Z" fill="rgba(0, 0, 0, 0.9)"></path></svg></span></button>                    </div>
+                <div class="splide__track">
+                    <ul class="splide__list"> 
+                        <li class="splide__slide">
+                            <figure class="card">
+                                <img src="../motosierra.png" alt="Imagen de Motosierra">
+                                <p class="desc">Herramientas</p>
+                                <h2 class="title">Motosierra</h2>
+                                <div class="box">
+                                    <div class="price">$150</div>
+                                    <button class="btn">Comprar</button>
+                                </div>
+                            </figure>                              
+                        </li>
+                        <li class="splide__slide">
+                            <figure class="card">
+                                <img src="../motosierra.png" alt="Imagen de Motosierra">
+                                <p class="desc">Herramientas</p>
+                                <h2 class="title">Motosierra</h2>
+                                <div class="box">
+                                    <div class="price">$150</div>
+                                    <button class="btn">Comprar</button>
+                                </div>
+                            </figure>                              
+                        </li>
+                        <li class="splide__slide">
+                            <figure class="card">
+                                <img src="../motosierra.png" alt="Imagen de Motosierra">
+                                <p class="desc">Herramientas</p>
+                                <h2 class="title">Motosierra</h2>
+                                <div class="box">
+                                    <div class="price">$150</div>
+                                    <button class="btn">Comprar</button>
+                                </div>
+                            </figure>                              
+                        </li>
+                        <li class="splide__slide">
+                            <figure class="card">
+                                <img src="../motosierra.png" alt="Imagen de Motosierra">
+                                <p class="desc">Herramientas</p>
+                                <h2 class="title">Motosierra</h2>
+                                <div class="box">
+                                    <div class="price">$150</div>
+                                    <button class="btn">Comprar</button>
+                                </div>
+                            </figure>                              
+                        </li>
+                        <li class="splide__slide">
+                            <figure class="card">
+                                <img src="../motosierra.png" alt="Imagen de Motosierra">
+                                <p class="desc">Herramientas</p>
+                                <h2 class="title">Motosierra</h2>
+                                <div class="box">
+                                    <div class="price">$150</div>
+                                    <button class="btn">Comprar</button>
+                                </div>
+                            </figure>                              
+                        </li>
+                        <li class="splide__slide">
+                            <figure class="card">
+                                <img src="../motosierra.png" alt="Imagen de Motosierra">
+                                <p class="desc">Herramientas</p>
+                                <h2 class="title">Motosierra</h2>
+                                <div class="box">
+                                    <div class="price">$150</div>
+                                    <button class="btn">Comprar</button>
+                                </div>
+                            </figure>                              
+                        </li>
+                        <li class="splide__slide">
+                            <figure class="card">
+                                <img src="../motosierra.png" alt="Imagen de Motosierra">
+                                <p class="desc">Herramientas</p>
+                                <h2 class="title">Motosierra</h2>
+                                <div class="box">
+                                    <div class="price">$150</div>
+                                    <button class="btn">Comprar</button>
+                                </div>
+                            </figure>                              
+                        </li>
+                        <li class="splide__slide">
+                            <figure class="card">
+                                <img src="../motosierra.png" alt="Imagen de Motosierra">
+                                <p class="desc">Herramientas</p>
+                                <h2 class="title">Motosierra</h2>
+                                <div class="box">
+                                    <div class="price">$150</div>
+                                    <button class="btn">Comprar</button>
+                                </div>
+                            </figure>                              
+                        </li>
+                        <li class="splide__slide">
+                            <figure class="card">
+                                <img src="../motosierra.png" alt="Imagen de Motosierra">
+                                <p class="desc">Herramientas</p>
+                                <h2 class="title">Motosierra</h2>
+                                <div class="box">
+                                    <div class="price">$150</div>
+                                    <button class="btn">Comprar</button>
+                                </div>
+                            </figure>                              
+                        </li>
+                        <li class="splide__slide">
+                            <figure class="card">
+                                <img src="../motosierra.png" alt="Imagen de Motosierra">
+                                <p class="desc">Herramientas</p>
+                                <h2 class="title">Motosierra</h2>
+                                <div class="box">
+                                    <div class="price">$150</div>
+                                    <button class="btn">Comprar</button>
+                                </div>
+                            </figure>                              
+                        </li>
+
+
+
+
+
+                    </ul>
+                </div>
+                <div class="splide__arrows">
+                    <button class="arrow-offers splide__arrow--next"><span><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="rgba(0, 0, 0, 0.9)"><path d="M14.0656 4.9325L15.1263 5.99316L9.12254 11.9969L15.1325 18.0069L14.0719 19.0676L7.00122 11.9969L14.0656 4.9325Z" fill="rgba(0, 0, 0, 0.9)"></path></svg></span></button>
+                </div>
+            </div>
+
+       
+    </section> 
     </section>
 
     <footer>
@@ -141,7 +347,7 @@
 
     </footer>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script src="../scripts/indexScript.js"></script>
     
 </body>
