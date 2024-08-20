@@ -263,7 +263,6 @@ body {
 .splide__track {
     height: auto;
     width: 80vw;
-    background-color: rgba(226,226,226,0.8);
     padding: 30px 0 30px 0;
     border-radius: 10px;
 }
@@ -292,6 +291,7 @@ body {
     border-radius: 8px;
     transition: transform 0.5s;
     flex: 0 0 310px;
+    border: #000000 solid 1px;
 }
 
 .card:hover {
