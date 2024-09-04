@@ -2,6 +2,7 @@ html {
     scroll-behavior: smooth;
 }
 
+
 /* Barra de navegacion */
 * {
     margin: 0;
@@ -238,7 +239,7 @@ body {
     flex-direction: column;
     align-items: center;
     height: 100vh;
-    padding: 7vw;
+    padding-inline: 7vw;
 }
 
 .pheading {
@@ -291,7 +292,7 @@ body {
     border-radius: 8px;
     transition: transform 0.5s;
     flex: 0 0 310px;
-    border: #000000 solid 1px;
+    border: #000000 solid 3px;
 }
 
 .card:hover {
@@ -336,7 +337,7 @@ body {
     color: #000000;
     padding: 10px 18px;
     font-weight: 900;
-    border: 1px solid #7471ff;
+    border: 2px solid #7471ff;
     border-radius: 20px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
     cursor: pointer;
@@ -352,21 +353,22 @@ body {
 
 /* Footer */
 footer {
-    padding: 20px 5%;
+    bottom: 0;
+    width: 100%;
+    padding: 1% 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
+    position: fixed;
     z-index: 999;
     background-image:linear-gradient(to right bottom, #c2c2c2, #a9a9a9, #959595, #7b7b7b, #7b7b7b);
     box-shadow: 0 0 14px rgba(0,0,0,0.3);
-    
 }
 
 footer .redes{
     display: flex;
-        align-items: center;
-        gap: 16px;
+    align-items: center;
+    gap: 16px;
 }
 
 footer a {
@@ -386,3 +388,4 @@ footer p {
     font-size: 15px;
     font-weight: bold;
 }
+
