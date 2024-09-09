@@ -4,83 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro - Mi Página Web</title>
-    <link rel="stylesheet" href="../styles/signup.css">
+    <link rel="stylesheet" href="../styles/styleSignup.css">
 </head>
 <body>
     <div class="forms">
         <div class="form-group">
             <div class="form-container">
-                <h1>Regístrate</h1>
-                <p id="error"></p>
+                <div class="title">
+                    <h1>Compradores</h1>
+                </div>
+                <p id="errorUser"></p>
                 <form class="form">
                     <div>
                         <label>Nombre:</label>
-                        <input type="text" id="name" name="name" placeholder="Escribe tu nombre">
+                        <input type="text" id="nameUser" name="name" placeholder="Escribe tu nombre">
                     </div>
                     <div>
                         <label>Apellido:</label>
-                        <input type="text" id="surname" name="surname" placeholder="Escribe tu apellido">
+                        <input type="text" id="surnameUser" name="surname" placeholder="Escribe tu apellido">
                     </div>
                     <div>
                         <label>Nombre de Usuario:</label>
-                        <input type="text" id="username" name="username" placeholder="Escribe un nombre de usuario">
+                        <input type="text" id="usernameUser" name="username" placeholder="Escribe un nombre de usuario">
                     </div>
                     <div>
                         <label>Email:</label>
-                        <input type="email" id="email" name="email" placeholder="Escribe tu email">
+                        <input type="email" id="emailUser" name="email" placeholder="Escribe tu email">
                     </div>
                     <div>
                         <label>Telefono:</label>
-                        <input type="number" id="tel" name="tel" placeholder="Escribe tu numero de telefono">
+                        <input type="number" id="telUser" name="tel" placeholder="Escribe tu numero de telefono">
                     </div>
                     <div>
                         <label>Contraseña:</label>
-                        <input type="text" id="password" name="password" placeholder="Escribe la contraseña">
+                        <input type="text" id="passwordUser" name="password" placeholder="Escribe la contraseña">
                     </div>
                     <div>
                         <label>Confirmar Contraseña:</label>
-                        <input type="text" id="confirmPass" name="pass-confirm" placeholder="Confirma tu contraseña">
+                        <input type="text" id="confirmPassUser" name="pass-confirm" placeholder="Confirma tu contraseña">
                     </div>
                     <div>
-                    <button id="signButton">Sign Up</button>
+                    <button id="signButtonUser">Sign Up</button>
                 </form>
             </div>
         </div>
         <div class="form-group"></div>
             <div class="form-container">
-                <h1>Regístrate</h1>
-                <p id="error"></p>
+                <div class="title">
+                    <h1>Vendedores</h1>
+                </div>
+                <p id="errorEmp"></p>
                 <form class="form">
                     <div>
-                        <label>Nombre:</label>
-                        <input type="text" id="name" name="name" placeholder="Escribe tu nombre">
-                    </div>
-                    <div>
-                        <label>Apellido:</label>
-                        <input type="text" id="surname" name="surname" placeholder="Escribe tu apellido">
-                    </div>
-                    <div>
-                        <label>Nombre de Usuario:</label>
-                        <input type="text" id="username" name="username" placeholder="Escribe un nombre de usuario">
+                        <label>Nombre de usuario:</label>
+                        <input type="text" id="nameEmp" name="name" placeholder="Escribe tu nombre de usuario">
                     </div>
                     <div>
                         <label>Email:</label>
-                        <input type="email" id="email" name="email" placeholder="Escribe tu email">
+                        <input type="email" id="emailEmp" name="email" placeholder="Escribe tu email">
                     </div>
                     <div>
                         <label>Telefono:</label>
-                        <input type="number" id="tel" name="tel" placeholder="Escribe tu numero de telefono">
+                        <input type="number" id="telEmp" name="tel" placeholder="Escribe tu numero de telefono">
                     </div>
                     <div>
                         <label>Contraseña:</label>
-                        <input type="text" id="password" name="password" placeholder="Escribe la contraseña">
+                        <input type="text" id="passwordEmp" name="password" placeholder="Escribe la contraseña">
                     </div>
                     <div>
                         <label>Confirmar Contraseña:</label>
-                        <input type="text" id="confirmPass" name="pass-confirm" placeholder="Confirma tu contraseña">
+                        <input type="text" id="confirmPassEmp" name="pass-confirm" placeholder="Confirma tu contraseña">
                     </div>
                     <div>
-                    <button id="signButton">Sign Up</button>
+                    <button id="signButtonEmpresa">Sign Up</button>
                 </form>
             </div>
         </div>
@@ -88,6 +84,6 @@
 
     
         <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-        <script src="../scripts/validacionForms.js"></script>
+        <script src="../scripts/validacionForm.js"></script>
 </body>
 </html>

@@ -14,15 +14,13 @@
 
         $password_hash = password_hash($password, PASSWORD_DEFAULT);
         
-        echo $password_hash;
-
         if (!is_string($name) && !is_string($surname)) {
             exit();
         }
 
-        $stmt = $pdo->prepare("INSERT INTO `cliente` (`nombre`, `apellido`, `tel`, `email`, `contraseña`) VALUES (?, ?, ?, ?, ?)");
+        $stmt = $pdo->prepare("INSERT INTO `cliente` (`nombre`, `apellido`, `tel`, `email`, `contrasena`, `username`) VALUES (?, ?, ?, ?, ?, ?)");
 
-        if ($stmt->execute([$name, $surname, $tel, $email, $password_hash])) {
+        if ($stmt->execute([$name, $surname, $tel, $email, $password_hash, $username])) {
             echo json_encode(['message' => 'Cuenta Creada']);
         }else {
             echo json_encode(['message' => 'Error al crear la cuenta']);

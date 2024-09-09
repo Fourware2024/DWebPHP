@@ -361,7 +361,7 @@ footer {
     align-items: center;
     position: fixed;
     z-index: 999;
-    background-image:linear-gradient(to right bottom, #c2c2c2, #a9a9a9, #959595, #7b7b7b, #7b7b7b);
+    background-image:linear-gradient(to right bottom, #917c7c, #ad9191, #c4a0a0, #e2b4b4);
     box-shadow: 0 0 14px rgba(0,0,0,0.3);
 }
 

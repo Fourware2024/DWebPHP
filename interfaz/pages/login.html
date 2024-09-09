@@ -4,27 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login Form | Dan Aleko</title>
-  <link rel="stylesheet" href="../styles/styleLogin.css">
+  <link rel="stylesheet" href="../styles/styleLogins.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <header>
-        <div class="conteiner"><img src="../FourwareLogo.png" alt="Logo de la pagina" width="125" height="120"></div>
-    </header>
   <div class="wrapper">
+    <h1>Login</h1>
+    <p id="error"></p>
     <form action="">
-      <h1>Login</h1>
       <div class="input-box">
-        <input type="text" placeholder="Username" required>
+        <input id="usernameLogin" type="text" placeholder="Username" required>
       </div>
       <div class="input-box">
-        <input type="password" placeholder="Password" required>
+        <input id="passwordLogin" type="password" placeholder="Password" required>
       </div>
       <div class="remember-forgot">
         <label><input type="checkbox">Remember Me</label>
         <a href="#">Forgot Password</a>
       </div>
-      <button type="submit" class="btn">Login</button>
+      <button id="loginButton" class="btn">Login</button>
       <div class="register-link">
         <p>Dont have an account? <a href="signup.html">Register</a></p>
       </div>
@@ -48,6 +46,7 @@
     </div>
 
 </footer>
-
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="../scripts/validacionLogin.js"></script>
 </body>
 </html>
