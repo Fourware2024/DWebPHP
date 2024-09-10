@@ -23,7 +23,7 @@ function validacionLogin() {
     .then(data => { 
         if(data.result) {
             console.log("Login successful!");
-            location.href="http://localhost/proyecto/DWebPHP/interfaz/pages/index.html";
+            location.href="../pages/login.html";
         }else {
             console.log("Login failed!");
             error.html("El nombre de usuario o la contraseña son incorrectos")
