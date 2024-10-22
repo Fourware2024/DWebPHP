@@ -23,7 +23,11 @@ function validacionLogin() {
     .then(data => { 
         if(data.result) {
             console.log("Login successful!");
+<<<<<<< Updated upstream
             location.href="../pages/login.html";
+=======
+            location.href="../pages/index.html";
+>>>>>>> Stashed changes
         }else {
             console.log("Login failed!");
             error.html("El nombre de usuario o la contraseña son incorrectos")
