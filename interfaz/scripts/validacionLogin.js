@@ -21,7 +21,7 @@ function validacionLogin() {
     })
     .then(response => response.json())
     .then(data => { 
-        if(data.result) {
+        if(data.result == true) {
             console.log("Login successful!");
             location.href="../pages/index.html";
         }else {

@@ -70,6 +70,7 @@ function validarSignUser() {
             .then(response => response.text())
             .then(data => {
               console.log(data)
+              location.href="../pages/login.html";
             })
             .catch(error => console.error('Error:', error))
             
@@ -135,6 +136,7 @@ function validarSignEmpresa() {
             .then(response => response.text())
             .then(data => {
               console.log(data)
+              location.href="../pages/login.html";
             })
           .catch(error => console.error('Error:', error))
           
