@@ -72,7 +72,7 @@ function validarSignUser() {
               console.log(data)
             })
             .catch(error => console.error('Error:', error))
-            location.href="../pages/login.html";
+            
           }
         }
       })
@@ -137,7 +137,7 @@ function validarSignEmpresa() {
               console.log(data)
             })
           .catch(error => console.error('Error:', error))
-          location.href="../pages/login.html";
+          
       }
     }
   }).catch(error => console.error('Error:', error))
