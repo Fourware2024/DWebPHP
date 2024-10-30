@@ -177,7 +177,6 @@ body {
         /* background: url(../pattern.png); */
         justify-content: center;
         padding-top: 30px;
-        height: 25vh;
         display: flex;
     }
 
@@ -238,7 +237,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
     padding-inline: 7vw;
 }
 
@@ -353,14 +351,11 @@ body {
 
 /* Footer */
 footer {
-    bottom: 0;
     width: 100%;
     padding: 1% 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
-    z-index: 999;
     background-image:linear-gradient(to right bottom, #917c7c, #ad9191, #c4a0a0, #e2b4b4);
     box-shadow: 0 0 14px rgba(0,0,0,0.3);
 }
