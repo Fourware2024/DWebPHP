@@ -1,4 +1,4 @@
-$("#botonChangeImg").click(cambioImg);
+$('#cargaImagen').on('change', cambioImg);
 
 function cambioImg() {
     var fileInput = $('#cargaImagen')[0];
