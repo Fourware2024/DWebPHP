@@ -23,6 +23,7 @@ if (isset($_POST)) {
         $stored_password = $result[0]['contrasena'];
         if (password_verify($password, $stored_password)) { 
             $_SESSION['username'] = $username;
+            $_SESSION['type'] = 'cliente';
             $response = array('result' => true);
         } else {
             $response = array('result' => false);
@@ -39,6 +40,7 @@ if (isset($_POST)) {
             $stored_password = $result[0]['contrasena'];
             if (password_verify($password, $stored_password)) { 
                 $_SESSION['username'] = $username;
+                $_SESSION['type'] = 'empresa';
                 $response = array('result' => true);
             } else {
                 $response = array('result' => false);

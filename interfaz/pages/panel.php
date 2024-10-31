@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
 </head>
 
 <?php
@@ -31,6 +32,12 @@ if (isset($_POST['logout'])) {
     <form method="POST">
         <button type="submit" name="logout">Log Out</button>
     </form>
+    <input id="cargaImagen" type="file">
+    <img src="../../logica/showImageProfile.php" alt="Imagen de Perfil" />
+    <button id="botonChangeImg">Mandar</button>
 
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="../scripts/panelScript.js"></script>
 </body>
 </html>

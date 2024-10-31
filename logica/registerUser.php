@@ -11,6 +11,7 @@
         $email = trim($user["email"]);
         $tel = trim($user["tel"]);
         $password = trim($user["password"]);
+        $imagen = file_get_contents('../interfaz/perfilDefault.png');
 
         $password_hash = password_hash($password, PASSWORD_DEFAULT);
         
@@ -18,9 +19,9 @@
             exit();
         }
 
-        $stmt = $pdo->prepare("INSERT INTO `cliente` (`nombre`, `apellido`, `tel`, `email`, `contrasena`, `username`) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt = $pdo->prepare("INSERT INTO `cliente` ( `username`, `nombre`, `apellido`, `tel`, `email`, `contrasena`, `imagenPerfil`) VALUES (?, ?, ?, ?, ?, ?, ?)");
 
-        if ($stmt->execute([$name, $surname, $tel, $email, $password_hash, $username])) {
+        if ($stmt->execute([$username, $name, $surname, $tel, $email, $password_hash, $imagen])) {
             echo json_encode(['message' => 'Cuenta Creada']);
         }else {
             echo json_encode(['message' => 'Error al crear la cuenta']);
