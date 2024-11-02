@@ -18,3 +18,13 @@ function cambioImg() {
         console.error('Error:', error);
     });
 }
+
+
+$(document).ready(function() {
+    fetch('../../logica/takeDataUsers.php')
+    .then(response => response.text())
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => console.error('Error:', error));
+});

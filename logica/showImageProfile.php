@@ -11,21 +11,39 @@ if (!isset($_SESSION['username'])) {
 $username = $_SESSION['username'];
 
 try {
-    // Preparar la consulta para obtener la imagen
-    $stmt = $pdo->prepare("SELECT imagenPerfil FROM cliente WHERE username = :username");
-    $stmt->bindParam(":username", $username);
-    $stmt->execute();
+    if($_SESSION['type'] == 'cliente'){
+        $stmt = $pdo->prepare("SELECT imagenPerfil FROM cliente WHERE username = :username");
+        $stmt->bindParam(":username", $username);
+        $stmt->execute();
 
-    // Obtener la imagen
-    if ($stmt->rowCount() > 0) {
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        $imageData = $row['imagenPerfil'];
+    
+        if ($stmt->rowCount() > 0) {
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            $imageData = $row['imagenPerfil'];
 
-        // Establecer el tipo de contenido adecuado
-        header("Content-Type: image/jpeg"); // Cambia a image/png si es un PNG
-        echo $imageData; // Enviar la imagen al navegador
-    } else {
-        echo "No se encontró la imagen.";
+        
+            header("Content-Type: image/jpeg");
+            echo $imageData;
+        } else {
+            echo "No se encontró la imagen.";
+        }
+    }else if($_SESSION['type'] == 'empresa'){
+        $stmt = $pdo->prepare("SELECT imagenPerfil FROM vendedor WHERE nombre = :username");
+        $stmt->bindParam(":username", $username);
+        $stmt->execute();
+
+    
+        if ($stmt->rowCount() > 0) {
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            $imageData = $row['imagenPerfil'];
+
+        
+            header("Content-Type: image/jpeg");
+            echo $imageData;
+        } else {
+            echo "No se encontró la imagen.";
+        }
+
     }
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();

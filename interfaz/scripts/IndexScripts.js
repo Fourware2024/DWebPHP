@@ -73,3 +73,9 @@ function accountClick() {
     })
     .catch(error => console.error('Error:', error));
 }
+
+
+$(".btn").click(function() {
+    let id = $(this).attr('name');
+    console.log(id);
+});

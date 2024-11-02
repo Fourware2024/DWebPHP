@@ -12,7 +12,7 @@ if (isset($_POST)) {
     $username = $user['username'];
     $password = $user['password'];
 
-    $stmt = $pdo->prepare("SELECT contrasena FROM cliente WHERE username = :username");
+    $stmt = $pdo->prepare("SELECT contrasena, idCliente FROM cliente WHERE username = :username");
     $stmt->bindParam(":username", $username);
     $stmt->execute();
     $result = $stmt->fetchAll();
@@ -22,6 +22,7 @@ if (isset($_POST)) {
     if (count($result) > 0) {
         $stored_password = $result[0]['contrasena'];
         if (password_verify($password, $stored_password)) { 
+            $_SESSION['userID'] = $result[0]['idCliente'];
             $_SESSION['username'] = $username;
             $_SESSION['type'] = 'cliente';
             $response = array('result' => true);
@@ -29,7 +30,7 @@ if (isset($_POST)) {
             $response = array('result' => false);
         }
     }else{
-        $stmt = $pdo->prepare("SELECT contrasena FROM vendedor WHERE nombre = :username");
+        $stmt = $pdo->prepare("SELECT contrasena, idVendedor FROM vendedor WHERE nombre = :username");
         $stmt->bindParam(":username", $username);
         $stmt->execute();
         $result = $stmt->fetchAll();
@@ -39,6 +40,7 @@ if (isset($_POST)) {
         if (count($result) > 0) {
             $stored_password = $result[0]['contrasena'];
             if (password_verify($password, $stored_password)) { 
+                $_SESSION['userID'] = $result[0]['idVendedor'];
                 $_SESSION['username'] = $username;
                 $_SESSION['type'] = 'empresa';
                 $response = array('result' => true);
