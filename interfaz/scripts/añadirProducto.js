@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 $("#crear").click(function() {
     event.preventDefault();
 
