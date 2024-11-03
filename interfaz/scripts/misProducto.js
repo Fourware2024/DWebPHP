@@ -8,13 +8,14 @@ $(document).ready(function() {
     })
     .then(data => {
         const productsContainer = $('#products'); 
-
+        console.log(data);
 
         if (Array.isArray(data) && data.length > 0) {
             productsContainer.empty(); 
 
             data.forEach(product => {
                 const productCard = `
+
                     <figure class="card" name="${product.idProducto}">
                         <img src="${product.imagen}" alt="Imagen de ${product.nombre}">
                         <p class="desc">${product.categoria}</p>
@@ -36,13 +37,14 @@ $(document).ready(function() {
                             </div>
                         </div>
                     </figure>
+
                 `;
                 productsContainer.append(productCard);
             });
         } else {
             productsContainer.append('<p>No hay productos disponibles.</p>');
         }
-
+        
         $(".del").click(function() {
 
             const confirmation = confirm("¿Estás seguro de que deseas eliminar este producto?");

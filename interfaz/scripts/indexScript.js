@@ -1,3 +1,6 @@
+$(document).ready(function() {
+
+
 $(".menu-btn").click(function() {
     $(".navbar .menu").toggleClass("active");
     $(".menu-btn i").toggleClass("active");
@@ -54,7 +57,7 @@ var offers = new Splide( '.offers', {
   } );
 
   offers.mount();
-  sellers.mount();
+  
 
 $("#account").click(accountClick);
 
@@ -78,4 +81,46 @@ function accountClick() {
 $(".btn").click(function() {
     let id = $(this).attr('name');
     console.log(id);
+});
+
+
+fetch('../../logica/showLastProducts.php')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json(); 
+    })
+    .then(data => {
+        const productsContainer = $('#ultProductos'); 
+        console.log(data);
+
+        if (Array.isArray(data) && data.length > 0) {
+            productsContainer.empty(); 
+
+            data.forEach(product => {
+                const productCard = `
+                    <li class="splide__slide">
+                        <figure class="card" name="${product.idProducto}">
+                            <img src="${product.imagen}" alt="Imagen de ${product.nombre}">
+                            <p class="desc">${product.categoria}</p>
+                            <h2 class="title">${product.nombre}</h2>
+                            <div class="box">
+                                <div class="price">$${product.precio}</div>
+                                <button class="btn">Comprar</button>
+                            </div>
+                        </figure>                              
+                    </li>
+                    
+                `;
+                productsContainer.append(productCard);
+                
+            });
+            sellers.mount();
+        } else {
+            productsContainer.append('<p>No hay productos disponibles.</p>');
+        }
+        })
+
+        .catch(error => console.error('Error:', error));
 });
