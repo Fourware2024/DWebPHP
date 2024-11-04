@@ -101,8 +101,10 @@ fetch('../../logica/showLastProducts.php')
             data.forEach(product => {
                 const productCard = `
                     <li class="splide__slide">
-                        <figure class="card" name="${product.idProducto}">
-                            <img src="${product.imagen}" alt="Imagen de ${product.nombre}">
+                        <figure class="card">
+                            <a href="producto.html?id=${product.idProducto}">
+                                <img src="${product.imagen}">
+                            </a>
                             <p class="desc">${product.categoria}</p>
                             <h2 class="title">${product.nombre}</h2>
                             <div class="box">

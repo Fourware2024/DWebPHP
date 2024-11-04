@@ -4,7 +4,7 @@ $host = 'localhost';
 $dbname = 'fourware_db';
 $username = 'root';
 $password = '';
-header('Content-Type: application/json');
+
 // Conexión a la base de datos
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
