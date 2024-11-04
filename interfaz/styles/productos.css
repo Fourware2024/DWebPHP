@@ -116,6 +116,8 @@ body {
 img {
     width: 35vw;
     height: 35vw;
+    border: 1px solid black;
+    border-radius: 10px;
 }
 
 .producto {
@@ -139,13 +141,13 @@ img {
 }
 
 #Nombre {
-    font-size: 3vw;
+    font-size: 2.7vw;
     color: #f63e4e;
     font-weight: bold;
 }
 
 #Categoria {
-    font-size: 1vw;
+    font-size: 1.5vw;
     color: orange;
     font-weight: bold;
 }
@@ -154,7 +156,11 @@ img {
     display: flex;
     flex-direction: column;
     margin-left: 1vh;
-    min-width: 15vw;
+    min-width: 14.5vw;
+    background-color: #ffffff;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 1vw;
 }
 .datos-bottom {
     margin-top: auto;
@@ -176,6 +182,7 @@ img {
     border-radius: 50px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
     cursor: pointer;
+    
 }
 
 #Agregar:hover {
@@ -193,5 +200,103 @@ img {
 }
 #Cantidad::-webkit-inner-spin-button, #Cantidad::-webkit-outer-spin-button {
     -webkit-appearance: none;
-    
 }
+
+#Precio {
+    font-size: 5vw;
+    cursor: text;
+}
+
+.bottom {
+    border: 1px solid black;
+    padding: 1vw;
+    margin-top: 1vh;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.rating {
+    align-self: center;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 0.3rem;
+    --stroke: #666;
+    --fill: #ffc73a;
+  }
+  
+  .rating input {
+    appearance: unset;
+  }
+  
+  .rating label {
+    cursor: pointer;
+  }
+  
+  .rating svg {
+    width: 2rem;
+    height: 2rem;
+    overflow: visible;
+    fill: transparent;
+    stroke: var(--stroke);
+    stroke-linejoin: bevel;
+    stroke-dasharray: 12;
+    animation: idle 4s linear infinite;
+    transition: stroke 0.2s, fill 0.5s;
+  }
+  
+  @keyframes idle {
+    from {
+      stroke-dashoffset: 24;
+    }
+  }
+  
+  .rating label:hover svg {
+    stroke: var(--fill);
+  }
+  
+  .rating input:checked ~ label svg {
+    transition: 0s;
+    animation: idle 4s linear infinite, yippee 0.75s backwards;
+    fill: var(--fill);
+    stroke: var(--fill);
+    stroke-opacity: 0;
+    stroke-dasharray: 0;
+    stroke-linejoin: miter;
+    stroke-width: 8px;
+  }
+  
+  @keyframes yippee {
+    0% {
+      transform: scale(1);
+      fill: var(--fill);
+      fill-opacity: 0;
+      stroke-opacity: 1;
+      stroke: var(--stroke);
+      stroke-dasharray: 10;
+      stroke-width: 1px;
+      stroke-linejoin: bevel;
+    }
+  
+    30% {
+      transform: scale(0);
+      fill: var(--fill);
+      fill-opacity: 0;
+      stroke-opacity: 1;
+      stroke: var(--stroke);
+      stroke-dasharray: 10;
+      stroke-width: 1px;
+      stroke-linejoin: bevel;
+    }
+  
+    30.1% {
+      stroke: var(--fill);
+      stroke-dasharray: 0;
+      stroke-linejoin: miter;
+      stroke-width: 8px;
+    }
+  
+    60% {
+      transform: scale(1.2);
+      fill: var(--fill);
+    }
+  }
