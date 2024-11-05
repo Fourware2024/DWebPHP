@@ -12,7 +12,7 @@ if (isset($_POST)) {
     $username = $user['username'];
     $password = $user['password'];
 
-    $stmt = $pdo->prepare("SELECT contrasena, idCliente FROM cliente WHERE username = :username");
+    $stmt = $pdo->prepare("SELECT contrasena, idCliente, tel, email  FROM cliente WHERE username = :username");
     $stmt->bindParam(":username", $username);
     $stmt->execute();
     $result = $stmt->fetchAll();
@@ -25,12 +25,14 @@ if (isset($_POST)) {
             $_SESSION['userID'] = $result[0]['idCliente'];
             $_SESSION['username'] = $username;
             $_SESSION['type'] = 'cliente';
+            $_SESSION['email'] = $result[0]['email'];
+            $_SESSION['contacto'] = $result[0]['tel'];
             $response = array('result' => true);
         } else {
             $response = array('result' => false);
         }
     }else{
-        $stmt = $pdo->prepare("SELECT contrasena, idVendedor FROM vendedor WHERE nombre = :username");
+        $stmt = $pdo->prepare("SELECT contrasena, idVendedor, contacto, email FROM vendedor WHERE nombre = :username");
         $stmt->bindParam(":username", $username);
         $stmt->execute();
         $result = $stmt->fetchAll();
@@ -42,6 +44,8 @@ if (isset($_POST)) {
             if (password_verify($password, $stored_password)) { 
                 $_SESSION['userID'] = $result[0]['idVendedor'];
                 $_SESSION['username'] = $username;
+                $_SESSION['email'] = $result[0]['email'];
+                $_SESSION['contacto'] = $result[0]['contacto'];
                 $_SESSION['type'] = 'empresa';
                 $response = array('result' => true);
             } else {
