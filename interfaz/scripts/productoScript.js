@@ -19,7 +19,6 @@ $(document).ready(function() {
     })
     .then(data => {
         const productsContainer = $('#producto'); 
-        console.log(data);
 
         if (Array.isArray(data) && data.length > 0) {
             productsContainer.empty(); 
@@ -34,7 +33,7 @@ $(document).ready(function() {
                                 <label id="Nombre">${product.nombre}</label><br>
                                 <label id="Categoria">${product.categoria}</label><br>
                             </div>
-                            <div class="datos-bottom">
+                            <div class="datos-bottom" id="datos-bottom">
                                 <div class="rating">
                                     <input type="radio" id="star-1" name="star-radio" value="star-1">
                                     <label for="star-1">
@@ -80,5 +79,31 @@ $(document).ready(function() {
 
 
 
+    function añadirCarrito(id, cantidad) {
+        const producto = {
+            id: id,
+            cantidad: cantidad
+        };
+        fetch('../../logica/agregarCarrito.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(producto)
+        })
+        .then(response => response.text())
+        .then(data => {
 
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    $(document).on("click", "#Agregar", function() {
+        let cantidad = $("#Cantidad").val();
+        if(cantidad > 0) {
+            añadirCarrito(id, cantidad);
+        }else{
+            alert("Cantidad Invalida!!!")
+        }
+    });
 });

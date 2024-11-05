@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis Productos || Goldcart</title>
-    <link rel="stylesheet" href="../styles/stylesMyProduct.css">
+    <link rel="stylesheet" href="../styles/styleBusqueda.css">
+    <title>Busqueda || Goldcart</title>
 </head>
 <body>
     <nav class="navbar">
-        <a href="index.html" class="logo">
+        <div class="logo">
             <h1>Goldcart</h1>
-        </a>
+        </div>
         <div class="searchbar">
             <input type="text" class="bar" placeholder="Search...">
             <button class="enter"><svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24" fill="none">
@@ -45,16 +45,19 @@
         </div>
     </nav>
 
-    <div class="misProductos">
-        <h1>Mis Productos</h1>
+
+    <div class="busqueda">
+        <h1>Busqueda: <a><?php echo $_GET['busqueda']?></a></h1>
         <div class="product" id="products">
             
             
         </div>
     </div>
 
+
+
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src="../scripts/misProducto.js"></script>
+    <script src="../scripts/search.js"></script>
     <script src="../scripts/navBar.js"></script>
 </body>
 </html>

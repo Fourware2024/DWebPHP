@@ -1,16 +1,6 @@
 $(document).ready(function() {
 
 
-$(".menu-btn").click(function() {
-    $(".navbar .menu").toggleClass("active");
-    $(".menu-btn i").toggleClass("active");
-});
-
-$(".enter").click(function(){
-    alert("Buscar...")
-})
-
-
 const imgs = [
     '../carruselTop/img1.png',
     '../carruselTop/img2.png'
@@ -38,15 +28,6 @@ function previousImg() {
     $("#carrusel-inner").css('background-image','url(' + imgs[imgPos] + ')');
 }
 
-var offers = new Splide( '.offers', {
-    perPage: 5,
-    rewind : true,
-    speed: 1000,
-    padding: '1%',
-    gap: '100px',
-    arrow: {prev: '.splide__arrow--prev', next: '.splide__arrow--next'},
-  } );
-
   var sellers = new Splide( '.sellers', {
     perPage: 5,
     rewind : true,
@@ -56,7 +37,6 @@ var offers = new Splide( '.offers', {
     arrow: {prev: '.splide__arrow--prev', next: '.splide__arrow--next'},
   } );
 
-  offers.mount();
   
 
 $("#account").click(accountClick);
@@ -78,10 +58,7 @@ function accountClick() {
 }
 
 
-$(".btn").click(function() {
-    let id = $(this).attr('name');
-    console.log(id);
-});
+
 
 
 fetch('../../logica/showLastProducts.php')
@@ -109,7 +86,7 @@ fetch('../../logica/showLastProducts.php')
                             <h2 class="title">${product.nombre}</h2>
                             <div class="box">
                                 <div class="price">$${product.precio}</div>
-                                <button class="btn">Comprar</button>
+                                <button class="btn" name="${product.idProducto}">Comprar</button>
                             </div>
                         </figure>                              
                     </li>
@@ -125,4 +102,32 @@ fetch('../../logica/showLastProducts.php')
         })
 
         .catch(error => console.error('Error:', error));
+
+        function añadirCarrito(id) {
+            const producto = {
+                id: id,
+                cantidad: 1
+            };
+            fetch('../../logica/agregarCarrito.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(producto)
+            })
+            .then(response => response.text())
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+        $("#ultProductos").on("click", ".btn", function() {
+            let id = $(this).attr('name');
+            console.log(id);
+            añadirCarrito(id);
+        });
+
+
+
 });

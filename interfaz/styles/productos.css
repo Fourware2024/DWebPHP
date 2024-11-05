@@ -43,6 +43,9 @@ body {
     font-size: 28px;
     color: #424144;
 }
+.navbar .logo {
+    text-decoration: none;
+}
 
 .navbar .searchbar {
     display: flex;
@@ -141,7 +144,7 @@ img {
 }
 
 #Nombre {
-    font-size: 2.7vw;
+    font-size: 2.5vw;
     color: #f63e4e;
     font-weight: bold;
 }

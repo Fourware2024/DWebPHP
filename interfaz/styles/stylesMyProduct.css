@@ -45,6 +45,10 @@ body {
     color: #424144;
 }
 
+.navbar .logo {
+    text-decoration: none;
+}
+
 .navbar .searchbar {
     display: flex;
     
@@ -274,3 +278,4 @@ h1 {
 .del {
     color: rgb(218, 59, 59) !important;
 }
+
