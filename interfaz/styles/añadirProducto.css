@@ -169,3 +169,64 @@ body {
         font-size: 25px;
     }
 }
+
+.insertProductos {
+    max-width: 90%;
+    width: 30rem;
+    margin: 3rem auto;
+    margin-top: 20vh;
+    padding: 1.25rem;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+}
+
+.insertProductos label {
+    display: block;
+    margin-bottom: 0.3125rem;
+    font-weight: bold;
+    color: #333;
+    font-size: 1rem;
+}
+
+.insertProductos input[type="text"],
+.insertProductos input[type="file"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 0.9375rem;
+    border: 0.0625rem solid #ddd;
+    border-radius: 0.25rem;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+.insertProductos input[type="file"] {
+    border: none;
+    padding: 0;
+}
+
+.insertProductos .crear {
+    font-size: 13px;
+    color: #000000;
+    padding: 10px 18px;
+    font-weight: 900;
+    border: 2px solid #7471ff;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+
+.insertProductos .crear:hover {
+    background-color: #3278d8;
+}
+
+@media (max-width: 40rem) {
+    .insertProductos {
+        width: 95%;
+    }
+    
+    .insertProductos .crear {
+        width: 100%;
+        padding: 0.75rem;
+    }
+}

@@ -7,8 +7,9 @@ $busqueda = $_POST['busqueda'];
 header('Content-Type: application/json');
 
 try {
-    $stmt = $pdo->prepare("SELECT idProducto, nombre, precio, categoria, descripcion, imagen FROM producto WHERE nombre = :nombre");
-    $stmt->bindParam(':nombre', $busqueda);
+    $stmt = $pdo->prepare("SELECT idProducto, nombre, precio, categoria, descripcion, imagen FROM producto WHERE nombre LIKE :nombre");
+    $param = '%' . $busqueda . '%';
+    $stmt->bindParam(':nombre', $param);
     $stmt->execute();
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

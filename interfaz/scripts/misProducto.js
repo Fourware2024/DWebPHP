@@ -30,9 +30,9 @@ $(document).ready(function() {
                                     <label>Stock</label>
                                 </div>
                                 <div class="botones">
-                                    <button class="btnCard">-</button>
+                                    <button class="btnCard minus">-</button>
                                     <label id="stock">${product.stock}</label>
-                                    <button class="btnCard">+</button>
+                                    <button class="btnCard plus">+</button>
                                 </div>
                             </div>
                         </div>
@@ -77,10 +77,50 @@ $(document).ready(function() {
 
 
 
-
+    
 
 
     })
     .catch(error => console.error('Error:', error));
+    
+    $(document).on("click", ".minus", function() {
+        let id = $(this).closest('figure').attr('name');
+        const producto = {
+            id: id,
+            type: 'minus'
+        };
+        fetch('../../logica/updateProductStock.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(producto)
+        })
+        .then(response => response.text())
+        .then(data => {
+            location.reload();
+            
+        })
+        .catch(error => console.error('Error:', error));
+    })
+    $(document).on("click", ".plus", function() {
+        let id = $(this).closest('figure').attr('name');
+        const producto = {
+            id: id,
+            type: 'plus'
+        };
+        fetch('../../logica/updateProductStock.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(producto)
+        })
+        .then(response => response.text())
+        .then(data => {
+            location.reload();
+        })
+        .catch(error => console.error('Error:', error));
+    })
 });
 

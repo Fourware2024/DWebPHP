@@ -66,35 +66,35 @@ if (isset($_POST['logout'])) {
     
 
     <section>
-        <form method="POST">
-            <button type="submit" name="logout">Log Out</button>
-        </form>
         <div class="divImg">
             <input id="cargaImagen" type="file" accept="image/*">
             <img src="../../logica/showImageProfile.php" alt="Imagen de Perfil" id="imgPerfil"/>
         </div>
+        <form method="POST">
+            <button type="submit" name="logout" id="logout">Log Out</button>
+        </form>
         <div class="fields">
             <?php
                 if($_SESSION['type'] == 'empresa'){
                     echo '<a href="añadirProducto.html" class="Añadir">Añadir Producto</a>';
                     echo '<a href="MisProductos.html" class="MyProducts">Mis Productos</a>';
                     echo '<label>Empresa: </label>';
-                    echo '<input class="values" type="text" value="'.$_SESSION['username'].'">';
+                    echo '<label>'.$_SESSION['username'].'</label>';
                     echo '<br>';
                     echo '<label>Correo: </label>';
-                    echo '<input class="values" type="text" value="'.$_SESSION['email'].'">';
+                    echo '<label>'.$_SESSION['email'].'</label>';
                     echo '<br>';
                     echo '<label>Telefono: </label>';
-                    echo '<input class="values" type="text" value="'.$_SESSION['contacto'].'">';
+                    echo '<label>'.$_SESSION['contacto'].'</label>';
                 }else if($_SESSION['type'] == 'cliente'){
-                    echo '<label>Username: </label>';
-                    echo '<input class="values" type="text" value="'.$_SESSION['username'].'">';
+                    echo '<label >Username: </label> ';
+                    echo '<label>'.$_SESSION['username'].'</label>';
                     echo '<br>';
                     echo '<label>Correo: </label>';
-                    echo '<input class="values" type="text" value="'.$_SESSION['email'].'">';
+                    echo '<label>'.$_SESSION['email'].'</label>';
                     echo '<br>';
                     echo '<label>Telefono: </label>';
-                    echo '<input class="values" type="text" value="'.$_SESSION['contacto'].'">';
+                    echo '<label>'.$_SESSION['contacto'].'</label>';
                     
                 }
                 
@@ -102,7 +102,6 @@ if (isset($_POST['logout'])) {
             ?>
         
         </div>
-        <button class="cambiar">Cambiar</button>
     </section>
 
     
@@ -130,5 +129,6 @@ if (isset($_POST['logout'])) {
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="../scripts/panelScripts.js"></script>
     <script src="../scripts/navBar.js"></script>
+    <script src="../scripts/accountCheck.js"></script>
 </body>
 </html>
